@@ -1,0 +1,915 @@
+{
+    "zabbix_export": {
+        "version": "7.0",
+        "template_groups": [
+            {
+                "uuid": "f1537448b0da4ebb870d18790c1cec56",
+                "name": "Templates SNMP Devices"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "3de70f383ee84cd4be579492e1b9c8aa",
+                "template": "Cisco_ASR_9902",
+                "name": "Cisco_ASR_9902",
+                "groups": [
+                    {
+                        "name": "Templates SNMP Devices"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "467449770df84d8796af1c6e477a2903",
+                        "name": "0/RP0-Virtual processor for RP XR - Usage 1min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.33",
+                        "key": "cpmCPUTotal1minRev[33]",
+                        "triggers": [
+                            {
+                                "uuid": "ba7460aedd5243789575a9126c2c4754",
+                                "expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[33],#1)>75",
+                                "recovery_mode": "RECOVERY_EXPRESSION",
+                                "recovery_expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[33],#1)<75",
+                                "name": "0/RP0-Virtual processor for RP XR Utilization > 75%",
+                                "priority": "WARNING"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "bfc8dd4f650c461185828856c50724c9",
+                        "name": "0/RP0-Virtual processor for admin - Usage 1min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.65",
+                        "key": "cpmCPUTotal1minRev[65]",
+                        "triggers": [
+                            {
+                                "uuid": "5b5dd97a39604e9ebf5fe5cffcf250c5",
+                                "expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[65],#1)>75",
+                                "recovery_mode": "RECOVERY_EXPRESSION",
+                                "recovery_expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[65],#1)<75",
+                                "name": "0/RP0-Virtual processor for admin Utilization > 75%",
+                                "priority": "WARNING"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "71701654c4ee473fa4228d67a4a61fe2",
+                        "name": "0/RP1-Virtual processor for RP XR - Usage 1min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.289",
+                        "key": "cpmCPUTotal1minRev[289]",
+                        "triggers": [
+                            {
+                                "uuid": "309092a67bb347079574f084dc4c4e83",
+                                "expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[289],#1)>75",
+                                "recovery_mode": "RECOVERY_EXPRESSION",
+                                "recovery_expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[289],#1)<75",
+                                "name": "0/RP1-Virtual processor for RP XR Utilization > 75%",
+                                "priority": "WARNING"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "49913b39ce9d47dd8c5e0c33d99b68aa",
+                        "name": "0/RP1-Virtual processor for admin - Usage 1min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.321",
+                        "key": "cpmCPUTotal1minRev[321]",
+                        "triggers": [
+                            {
+                                "uuid": "4d389ee762014f379825bc6ad9edde36",
+                                "expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[321],#1)>75",
+                                "recovery_mode": "RECOVERY_EXPRESSION",
+                                "recovery_expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[321],#1)<75",
+                                "name": "0/RP1-Virtual processor for admin Utilization > 75%",
+                                "priority": "WARNING"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "1e051b69af234ff89813f655f36758e2",
+                        "name": "0/0-Virtual processor for LC XR - Usage 1min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.33313",
+                        "key": "cpmCPUTotal1minRev[33313]",
+                        "triggers": [
+                            {
+                                "uuid": "5b02c523aa8c4c29ad775d975ad9cb35",
+                                "expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[33313],#1)>75",
+                                "recovery_mode": "RECOVERY_EXPRESSION",
+                                "recovery_expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[33313],#1)<75",
+                                "name": "0/0-Virtual processor for LC XR Utilization > 75%",
+                                "priority": "WARNING"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "97e02336a825412a921a578132688ef5",
+                        "name": "0/0-Virtual processor for admin - Usage 1min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.33345",
+                        "key": "cpmCPUTotal1minRev[33345]",
+                        "triggers": [
+                            {
+                                "uuid": "d8c208c6ec4c471ba6668907324a674f",
+                                "expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[33345],#1)>75",
+                                "recovery_mode": "RECOVERY_EXPRESSION",
+                                "recovery_expression": "last(/Cisco_ASR_9902/cpmCPUTotal1minRev[33345],#1)<75",
+                                "name": "0/0-Virtual processor for admin Utilization > 75%",
+                                "priority": "WARNING"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5484a2cd42274f448fca9d16573ef58a",
+                        "name": "0/RP0-Virtual processor for RP XR - Usage 5min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.33",
+                        "key": "cpmCPUTotal5minRev[33]",
+                        "delay": "5m"
+                    },
+                    {
+                        "uuid": "556e7a72b6004d87979931919cbfa6a8",
+                        "name": "0/RP0-Virtual processor for admin - Usage 5min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.65",
+                        "key": "cpmCPUTotal5minRev[65]",
+                        "delay": "5m"
+                    },
+                    {
+                        "uuid": "604bcae04ea64ef0bf406de7863ea3b8",
+                        "name": "0/RP1-Virtual processor for RP XR - Usage 5min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.289",
+                        "key": "cpmCPUTotal5minRev[289]",
+                        "delay": "5m"
+                    },
+                    {
+                        "uuid": "dd55e2d847d049838294662b1b1d2c2f",
+                        "name": "0/RP1-Virtual processor for admin - Usage 5min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.321",
+                        "key": "cpmCPUTotal5minRev[321]",
+                        "delay": "5m"
+                    },
+                    {
+                        "uuid": "04323f2adcfe4b469fdb465c94f3cfdb",
+                        "name": "0/0-Virtual processor for LC XR - Usage 5min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.33313",
+                        "key": "cpmCPUTotal5minRev[33313]",
+                        "delay": "5m"
+                    },
+                    {
+                        "uuid": "caef920857964a63acb28f2031fe1928",
+                        "name": "0/0-Virtual processor for admin - Usage 5min(%)",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.33345",
+                        "key": "cpmCPUTotal5minRev[33345]",
+                        "delay": "5m"
+                    },
+                    {
+                        "uuid": "4868ecbfc04745e886da97a5ae2f4d8c",
+                        "name": "Discover Processors",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#ENTPHYINDEX},.1.3.6.1.4.1.9.9.109.1.1.1.1.2]",
+                        "key": "processors.cpu",
+                        "delay": "5m",
+                        "value_type": "TEXT",
+                        "trends": "0"
+                    },
+                    {
+                        "uuid": "3f8bae72170a412492cdc50caaa84a97",
+                        "name": "Discover Sensors",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#SENSORVALUE},.1.3.6.1.2.1.47.1.1.1.1.2,{#SENSORNAME},.1.3.6.1.2.1.47.1.1.1.1.7,{#SENSORPARENT},.1.3.6.1.2.1.47.1.1.1.1.4]",
+                        "key": "sensors.discovery",
+                        "delay": "5m",
+                        "value_type": "TEXT",
+                        "trends": "0"
+                    }
+                ],
+                "discovery_rules": [
+                    {
+                        "uuid": "0b8bb12f72884b8cba4c657a1f4641d2",
+                        "name": "Flash Devices",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#SNMPVALUE},.1.3.6.1.4.1.9.9.10.1.1.2.1.8]",
+                        "key": "ciscoFlashDeviceDescr",
+                        "delay": "300",
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "CISCO-FLASH-MIB::ciscoFlashDeviceDescr\n\nDescription of a Flash device. The description is meant to explain what the Flash device and its purpose is. Current values are:\nSystem flash - for the primary Flash used to store full system images.\nBoot flash - for the secondary Flash used to store bootstrap images.\n\nThe device description will always be available for a removable device, even when the device has been removed.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "ba94b9207ae6446c9da23c07b0325a7d",
+                                "name": "Size of Flash Device \"$1\"",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.10.1.1.2.1.16.{#SNMPINDEX}",
+                                "key": "ciscoFlashDeviceSizeExtended[\"{#SNMPVALUE}\"]",
+                                "delay": "3600",
+                                "units": "B",
+                                "description": "CISCO-FLASH-MIB::ciscoFlashDeviceSizeExtended\n\nTotal size of the Flash device. For a removable device, the size will be zero if the device has been removed.\nThis object is a 64-bit version of ciscoFlashDeviceSize.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "Flash Devices"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0b9ee681214a41e18e1015c82bfa60ec",
+                        "name": "Memory Pool",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#SNMPVALUE},.1.3.6.1.4.1.9.9.48.1.1.1.2]",
+                        "key": "ciscoMemoryPoolName",
+                        "delay": "300",
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "CISCO-MEMORY-POOL-MIB::ciscoMemoryPoolName\n\nA textual name assigned to the memory pool.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "86111dd3062d450aa0b5395974562e65",
+                                "name": "Free memory on Memory Pool \"$1\"",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.48.1.1.1.6.{#SNMPINDEX}",
+                                "key": "ciscoMemoryPoolFree[\"{#SNMPVALUE}\"]",
+                                "delay": "60",
+                                "units": "B",
+                                "description": "CISCO-MEMORY-POOL-MIB::ciscoMemoryPoolFree\n\nIndicates the number of bytes from the memory pool that are currently unused on the managed device.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "Memory"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "4f6f2e37f834408fa3c0b890328335f7",
+                                "name": "Name of Memory Pool \"$1\"",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.48.1.1.1.2.{#SNMPINDEX}",
+                                "key": "ciscoMemoryPoolName[\"{#SNMPVALUE}\"]",
+                                "delay": "3600",
+                                "value_type": "CHAR",
+                                "trends": "0",
+                                "description": "CISCO-MEMORY-POOL-MIB::ciscoMemoryPoolName\n\nA textual name assigned to the memory pool.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "Memory"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "06d1e318612d4358a59d4ef55990dc9d",
+                                "name": "Used memory on Memory Pool \"$1\"",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.48.1.1.1.5.{#SNMPINDEX}",
+                                "key": "ciscoMemoryPoolUsed[\"{#SNMPVALUE}\"]",
+                                "delay": "300",
+                                "units": "B",
+                                "description": "CISCO-MEMORY-POOL-MIB::ciscoMemoryPoolUsed\n\nIndicates the number of bytes from the memory pool that are currently in use by applications on the managed device.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "Memory"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "c176a981577a4d56b66d8bc54a1ca0ee",
+                                "name": "Utilization on Memory Pool \"$1\"",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.48.1.2.1.2.{#SNMPINDEX}",
+                                "key": "ciscoMemoryPoolUtilization5Min[\"{#SNMPVALUE}\"]",
+                                "delay": "300",
+                                "units": "%",
+                                "description": "CISCO-MEMORY-POOL-MIB::ciscoMemoryPoolUtilization5Min\n\nThis is the memory pool utilization for 5 minutes.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "Memory"
+                                    }
+                                ]
+                            }
+                        ],
+                        "trigger_prototypes": [
+                            {
+                                "uuid": "6dbbd40b274241aaa4a1bf3e4cc23b12",
+                                "expression": "last(/Cisco_ASR_9902/ciscoMemoryPoolUtilization5Min[\"{#SNMPVALUE}\"])>95 and find(/Cisco_ASR_9902/ciscoMemoryPoolName[\"{#SNMPVALUE}\"],,\"like\",\"image\")=0",
+                                "name": "High utilization of Memory Pool \"{#SNMPVALUE}\"",
+                                "priority": "AVERAGE"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cab73e72078647b1bbbd4465ee3a08db",
+                        "name": "CPU",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#SNMPVALUE},.1.3.6.1.4.1.9.9.109.1.1.1.1.2]",
+                        "key": "cpmCPUTotalPhysicalIndex",
+                        "delay": "300",
+                        "status": "DISABLED",
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "CISCO-PROCESS-MIB::cpmCPUTotalPhysicalIndex\n\nThe entPhysicalIndex of the physical entity for which the CPU statistics in this entry are maintained. The physical entity can be a CPU chip, a group of CPUs, a CPU card etc. The exact type of this entity is described by its entPhysicalVendorType value. If the CPU statistics in this entry correspond to more than one physical entity (or to no physical entity), or if the entPhysicalTable is not supported on the SNMP agent, the value of this object must be zero.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "84faac1ba5a34dd5a43f43426726670e",
+                                "name": "CPU #{#SNMPINDEX} Usage 1min Rev",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.7.{#SNMPINDEX}",
+                                "key": "cpmCPUTotal1minRev[{#SNMPINDEX}]",
+                                "delay": "60",
+                                "units": "%",
+                                "description": "CISCO-PROCESS-MIB::cpmCPUTotal1minRev\n\nThe overall CPU busy percentage in the last 1 minute period. This object deprecates the object cpmCPUTotal1min and increases the value range to (0..100).",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "CPU"
+                                    },
+                                    {
+                                        "tag": "Application:CPU:Interval",
+                                        "value": "1m"
+                                    },
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "geomorph:processor:cpu:index",
+                                        "value": "{#SNMPINDEX}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "bbac76fee00e4e6e83285fb9e17b9484",
+                                "name": "CPU #{#SNMPINDEX} Usage 5min Rev",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.109.1.1.1.1.8.{#SNMPINDEX}",
+                                "key": "cpmCPUTotal5minRev[{#SNMPINDEX}]",
+                                "delay": "300",
+                                "units": "%",
+                                "description": "CISCO-PROCESS-MIB::cpmCPUTotal5minRev\n\nThe overall CPU busy percentage in the last 5 minute period. This object deprecates the object cpmCPUTotal5min and increases the value range to (0..100).",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "CPU"
+                                    },
+                                    {
+                                        "tag": "Application:CPU:Interval",
+                                        "value": "5m"
+                                    },
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "geomorph:processor:cpu:index",
+                                        "value": "{#SNMPINDEX}"
+                                    }
+                                ],
+                                "trigger_prototypes": [
+                                    {
+                                        "uuid": "b5d987a3999b4d2087c44b23f3fd0826",
+                                        "expression": "last(/Cisco_ASR_9902/cpmCPUTotal5minRev[{#SNMPINDEX}])>95",
+                                        "name": "High CPU #{#SNMPINDEX} Usage",
+                                        "priority": "HIGH"
+                                    }
+                                ]
+                            }
+                        ],
+                        "graph_prototypes": [
+                            {
+                                "uuid": "6c6c3af5182c4306b0725b183b53cb25",
+                                "name": "CPU #{#SNMPINDEX} Usage",
+                                "graph_items": [
+                                    {
+                                        "color": "00C800",
+                                        "item": {
+                                            "host": "Cisco_ASR_9902",
+                                            "key": "cpmCPUTotal1minRev[{#SNMPINDEX}]"
+                                        }
+                                    },
+                                    {
+                                        "sortorder": "1",
+                                        "color": "C80000",
+                                        "item": {
+                                            "host": "Cisco_ASR_9902",
+                                            "key": "cpmCPUTotal5minRev[{#SNMPINDEX}]"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d1328329c128442191f5161c0bb08ed3",
+                        "name": "Processors Discovery",
+                        "type": "DEPENDENT",
+                        "key": "processors.cpu.discovery",
+                        "delay": "0",
+                        "item_prototypes": [
+                            {
+                                "uuid": "1c4075b6e51a48a3a987ac61fb6d143a",
+                                "name": "[{#SNMPINDEX}]Processor Name",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.47.1.1.1.1.2.{#ENTPHYINDEX}",
+                                "key": "processors.cpu.name[{#SNMPINDEX}]",
+                                "value_type": "TEXT",
+                                "trends": "0",
+                                "tags": [
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#ENTPHYINDEX}"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:type",
+                                        "value": "entity-title"
+                                    },
+                                    {
+                                        "tag": "geomorph:processor:cpu:index",
+                                        "value": "{#SNMPINDEX}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "processors.cpu"
+                        },
+                        "lld_macro_paths": [
+                            {
+                                "lld_macro": "{#ENTPHYINDEX}",
+                                "path": "$.[\"{#ENTPHYINDEX}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SNMPINDEX}",
+                                "path": "$.[\"{#SNMPINDEX}\"]"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a0c5accd43ee48cebeea836dc46bf97f",
+                        "name": "Air Temperature Sensors",
+                        "type": "DEPENDENT",
+                        "key": "sensors.air.temperature",
+                        "delay": "0",
+                        "filter": {
+                            "evaltype": "FORMULA",
+                            "formula": "A and (B or C)",
+                            "conditions": [
+                                {
+                                    "macro": "{#SENSORVALUE}",
+                                    "value": ".*Temperature Sensor.*",
+                                    "formulaid": "A"
+                                },
+                                {
+                                    "macro": "{#SENSORNAME}",
+                                    "value": ".*AIR.*",
+                                    "formulaid": "B"
+                                },
+                                {
+                                    "macro": "{#SENSORNAME}",
+                                    "value": ".*Inlet.*",
+                                    "formulaid": "C"
+                                }
+                            ]
+                        },
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "The textual name of the physical entity.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "959f15ba6ff04ccbba457806d2675bb0",
+                                "name": "{#SENSORNAME} (\u00b0C)",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.91.1.1.1.1.4.{#SNMPINDEX}",
+                                "key": "sensors.air.temperature[{#SNMPINDEX}]",
+                                "value_type": "FLOAT",
+                                "tags": [
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#SNMPINDEX}"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:type",
+                                        "value": "sensors_air_temperature"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:value:type",
+                                        "value": "celsius"
+                                    },
+                                    {
+                                        "tag": "geomorph:parent:ent:phy:index",
+                                        "value": "{#SENSORPARENTINDEX}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "sensors.discovery"
+                        },
+                        "lld_macro_paths": [
+                            {
+                                "lld_macro": "{#SENSORNAME}",
+                                "path": "$.[\"{#SENSORNAME}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORPARENTINDEX}",
+                                "path": "$.[\"{#SENSORPARENT}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORVALUE}",
+                                "path": "$.[\"{#SENSORVALUE}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SNMPINDEX}",
+                                "path": "$.[\"{#SNMPINDEX}\"]"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cb997c29ebd74168bd69fe85418fadca",
+                        "name": "Fan Speed Sensors",
+                        "type": "DEPENDENT",
+                        "key": "sensors.fan.speed",
+                        "delay": "0",
+                        "filter": {
+                            "conditions": [
+                                {
+                                    "macro": "{#SENSORVALUE}",
+                                    "value": ".*Fan Speed Sensor.*",
+                                    "formulaid": "A"
+                                }
+                            ]
+                        },
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "The textual name of the physical entity.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "e5da0d80da9f4457a2132b2d5dbcfab4",
+                                "name": "{#SENSORNAME} (RPM)",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.91.1.1.1.1.4.{#SNMPINDEX}",
+                                "key": "sensors.fan.speed[{#SNMPINDEX}]",
+                                "value_type": "FLOAT",
+                                "preprocessing": [
+                                    {
+                                        "type": "MULTIPLIER",
+                                        "parameters": [
+                                            "0.001"
+                                        ]
+                                    }
+                                ],
+                                "tags": [
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#SNMPINDEX}"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:type",
+                                        "value": "sensors_fan_speed"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:value:type",
+                                        "value": "rpm"
+                                    },
+                                    {
+                                        "tag": "geomorph:parent:ent:phy:index",
+                                        "value": "{#SENSORPARENTINDEX}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "sensors.discovery"
+                        },
+                        "lld_macro_paths": [
+                            {
+                                "lld_macro": "{#SENSORNAME}",
+                                "path": "$.[\"{#SENSORNAME}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORPARENTINDEX}",
+                                "path": "$.[\"{#SENSORPARENT}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORVALUE}",
+                                "path": "$.[\"{#SENSORVALUE}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SNMPINDEX}",
+                                "path": "$.[\"{#SNMPINDEX}\"]"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "59a3194a63c847d9aa2106fa405686bd",
+                        "name": "Transceiver Power Sensors",
+                        "type": "DEPENDENT",
+                        "key": "sensors.transceiver.power",
+                        "delay": "0",
+                        "filter": {
+                            "evaltype": "FORMULA",
+                            "formula": "A and (B or C)",
+                            "conditions": [
+                                {
+                                    "macro": "{#SENSORVALUE}",
+                                    "value": ".*Power Sensor.*",
+                                    "formulaid": "A"
+                                },
+                                {
+                                    "macro": "{#SENSORNAME}",
+                                    "value": ".*-Tx*",
+                                    "formulaid": "B"
+                                },
+                                {
+                                    "macro": "{#SENSORNAME}",
+                                    "value": ".*-Rx*",
+                                    "formulaid": "C"
+                                }
+                            ]
+                        },
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "The textual name of the physical entity.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "ad49ad77e2224ef591b67c77ecd96af7",
+                                "name": "{#SENSORNAME}(dBm)",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.91.1.1.1.1.4.{#SNMPINDEX}",
+                                "key": "sensors.transceiver.power[{#SNMPINDEX}]",
+                                "value_type": "FLOAT",
+                                "preprocessing": [
+                                    {
+                                        "type": "MULTIPLIER",
+                                        "parameters": [
+                                            "1.0E-5"
+                                        ]
+                                    },
+                                    {
+                                        "type": "JAVASCRIPT",
+                                        "parameters": [
+                                            "return 10 * Math.log10(value);"
+                                        ]
+                                    }
+                                ],
+                                "tags": [
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#SNMPINDEX}"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:type",
+                                        "value": "network_transceiver_power"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:value:type",
+                                        "value": "dbm"
+                                    },
+                                    {
+                                        "tag": "geomorph:parent:ent:phy:index",
+                                        "value": "{#SENSORPARENTINDEX}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "sensors.discovery"
+                        },
+                        "lld_macro_paths": [
+                            {
+                                "lld_macro": "{#SENSORNAME}",
+                                "path": "$.[\"{#SENSORNAME}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORPARENTINDEX}",
+                                "path": "$.[\"{#SENSORPARENT}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORVALUE}",
+                                "path": "$.[\"{#SENSORVALUE}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SNMPINDEX}",
+                                "path": "$.[\"{#SNMPINDEX}\"]"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ac401bab70e742ea987a3df1341fd62c",
+                        "name": "Transceiver Temperature Sensors",
+                        "type": "DEPENDENT",
+                        "key": "sensors.transceiver.temperature",
+                        "delay": "0",
+                        "filter": {
+                            "evaltype": "AND",
+                            "conditions": [
+                                {
+                                    "macro": "{#SENSORNAME}",
+                                    "value": ".*Module Temp.*",
+                                    "formulaid": "A"
+                                },
+                                {
+                                    "macro": "{#SENSORVALUE}",
+                                    "value": ".*Temperature Sensor.*",
+                                    "formulaid": "B"
+                                }
+                            ]
+                        },
+                        "lifetime_type": "DELETE_IMMEDIATELY",
+                        "lifetime": "0",
+                        "description": "The textual name of the physical entity.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "fcd0fcc1bc79492e99d9060fa2f7d28f",
+                                "name": "{#SENSORNAME} (\u00b0C)",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.9.91.1.1.1.1.4.{#SNMPINDEX}",
+                                "key": "sensors.transceiver.temperature[{#SNMPINDEX}]",
+                                "value_type": "FLOAT",
+                                "preprocessing": [
+                                    {
+                                        "type": "MULTIPLIER",
+                                        "parameters": [
+                                            "0.001"
+                                        ]
+                                    }
+                                ],
+                                "tags": [
+                                    {
+                                        "tag": "geomorph:ent:phy:index",
+                                        "value": "{#SNMPINDEX}"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:type",
+                                        "value": "network_transceiver_temperature"
+                                    },
+                                    {
+                                        "tag": "geomorph:item:value:type",
+                                        "value": "celsius"
+                                    },
+                                    {
+                                        "tag": "geomorph:parent:ent:phy:index",
+                                        "value": "{#SENSORPARENTINDEX}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "sensors.discovery"
+                        },
+                        "lld_macro_paths": [
+                            {
+                                "lld_macro": "{#SENSORNAME}",
+                                "path": "$.[\"{#SENSORNAME}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORPARENTINDEX}",
+                                "path": "$.[\"{#SENSORPARENT}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SENSORVALUE}",
+                                "path": "$.[\"{#SENSORVALUE}\"]"
+                            },
+                            {
+                                "lld_macro": "{#SNMPINDEX}",
+                                "path": "$.[\"{#SNMPINDEX}\"]"
+                            }
+                        ]
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "geomorph:ent:phy:index"
+                    }
+                ]
+            }
+        ],
+        "graphs": [
+            {
+                "uuid": "c08a3161f2e548c3a406a4aeb368bd93",
+                "name": "CPU Utilization 1min",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal1minRev[33345]"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal1minRev[33313]"
+                        }
+                    },
+                    {
+                        "sortorder": "2",
+                        "color": "2774A4",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal1minRev[65]"
+                        }
+                    },
+                    {
+                        "sortorder": "3",
+                        "color": "F7941D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal1minRev[33]"
+                        }
+                    },
+                    {
+                        "sortorder": "4",
+                        "color": "FC6EA3",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal1minRev[321]"
+                        }
+                    },
+                    {
+                        "sortorder": "5",
+                        "color": "6C59DC",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal1minRev[289]"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "5f08374b36d1492fbf8b00ccc64f7b39",
+                "name": "CPU Utilization 5min",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal5minRev[33345]"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal5minRev[33313]"
+                        }
+                    },
+                    {
+                        "sortorder": "2",
+                        "color": "2774A4",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal5minRev[65]"
+                        }
+                    },
+                    {
+                        "sortorder": "3",
+                        "color": "F7941D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal5minRev[33]"
+                        }
+                    },
+                    {
+                        "sortorder": "4",
+                        "color": "FC6EA3",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal5minRev[321]"
+                        }
+                    },
+                    {
+                        "sortorder": "5",
+                        "color": "6C59DC",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Cisco_ASR_9902",
+                            "key": "cpmCPUTotal5minRev[289]"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
