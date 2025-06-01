@@ -1,0 +1,234 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: d2d906b1c5034ded94ed6bf1bb8683f1
+      name: 'DC-power systems'
+  templates:
+    - uuid: 61f3507134de4274a81c3ada4af9d7a9
+      template: 'Eltek BC2000'
+      name: 'Eltek BC2000'
+      groups:
+        - name: 'DC-power systems'
+      items:
+        - uuid: 6eeb7f11816b416c85becaa5ab13fb22
+          name: 'Rectifier 1 Output Current'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.1.6.1.4.1.1
+          key: rectifierOutputCurrent.1
+          history: 90d
+          value_type: FLOAT
+          units: A
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: Application
+              value: 'Rectifier Load'
+          triggers:
+            - uuid: 5ae15469da544d3597c48689364cbe61
+              expression: 'max(/Eltek BC2000/rectifierOutputCurrent.1,2m)<=0'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'max(/Eltek BC2000/rectifierOutputCurrent.1,2m)>0'
+              name: 'Rectifier 1 -  Amp Output is Zero'
+              priority: HIGH
+              manual_close: 'YES'
+        - uuid: 3edc0c3910af482bac85be0fa77f6d1c
+          name: 'Rectifier 2 Output Current'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.1.6.1.4.1.2
+          key: rectifierOutputCurrent.2
+          history: 90d
+          value_type: FLOAT
+          units: A
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: Application
+              value: 'Rectifier Load'
+          triggers:
+            - uuid: 98581fb48c374144a066142eed7712f4
+              expression: 'max(/Eltek BC2000/rectifierOutputCurrent.2,2m)<=0'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'max(/Eltek BC2000/rectifierOutputCurrent.2,2m)>0'
+              name: 'Rectifier 2 -  Amp Output is Zero'
+              priority: HIGH
+              manual_close: 'YES'
+        - uuid: adf9eb5ef3804ef3a7fe4cf5f4231c0d
+          name: 'Rectifier 1 Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.1.6.1.5.1.1
+          key: rectifierStatus.1
+          history: 90d
+          description: |
+            moduleStatusOK(0),
+            moduleStatusAlarm(1),
+            moduleStatusDisabled(2),
+            moduleStatusRingerAOn(3),
+            moduleStatusRingerBOn(4),
+            moduleStatusUnknown(5)
+          valuemap:
+            name: 'Eltek value mapping'
+          tags:
+            - tag: Application
+              value: 'Rectifier Status'
+          triggers:
+            - uuid: c0f022cf78fb4c66986fc9d9d9292623
+              expression: 'last(/Eltek BC2000/rectifierStatus.1,#1)>0'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Eltek BC2000/rectifierStatus.1,#1)=0'
+              name: 'Rectifier 1 Status - Error State'
+              priority: HIGH
+              manual_close: 'YES'
+        - uuid: 0713e15265f34c1db1bfb3ad18c0a909
+          name: 'Rectifier 2 Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.1.6.1.5.1.2
+          key: rectifierStatus.2
+          history: 90d
+          description: |
+            moduleStatusOK(0),
+            moduleStatusAlarm(1),
+            moduleStatusDisabled(2),
+            moduleStatusRingerAOn(3),
+            moduleStatusRingerBOn(4),
+            moduleStatusUnknown(5)
+          valuemap:
+            name: 'Eltek value mapping'
+          tags:
+            - tag: Application
+              value: 'Rectifier Status'
+          triggers:
+            - uuid: 6353434a27134fe4ab28f5231d391f35
+              expression: 'last(/Eltek BC2000/rectifierStatus.2,#1)>0'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Eltek BC2000/rectifierStatus.2,#1)=0'
+              name: 'Rectifier 2 Status - Error State'
+              priority: HIGH
+              manual_close: 'YES'
+        - uuid: 211b4a6965dc42c4a44cacf64c51c6b7
+          name: 'System Current'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.3.3.0
+          key: systemCurrentValue.0
+          history: 90d
+          units: A
+          tags:
+            - tag: Application
+              value: 'System Load'
+        - uuid: 26838223561143a18bf0e9706ec38b16
+          name: 'System Internal Temperature'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.3.5.0
+          key: systemTemperatureValue.0
+          history: 90d
+          units: °C
+          tags:
+            - tag: Application
+              value: 'System Temperature'
+        - uuid: a45c5a2ccec3491b887672598ddc9ee0
+          name: 'System Voltage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.13858.2.3.2.0
+          key: systemVoltageValue.1
+          history: 90d
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+            - type: JAVASCRIPT
+              parameters:
+                - 'return (+value).toFixed(1);'
+          tags:
+            - tag: Application
+              value: 'System Voltage'
+          triggers:
+            - uuid: 0393316206ac4a4ea04b5b4919802177
+              expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)<47'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)>47'
+              name: 'System Voltage Below 47.00 Volts'
+              priority: DISASTER
+              manual_close: 'YES'
+            - uuid: 59320ec797474e9bae55806e4a4cf581
+              expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)<48'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)>48'
+              name: 'System Voltage Below 48.00 Volts'
+              priority: HIGH
+              manual_close: 'YES'
+            - uuid: daeb7d622ded4d829bfd80faa48d9593
+              expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)<49'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)>49'
+              name: 'System Voltage Below 49.00 Volts'
+              priority: WARNING
+              manual_close: 'YES'
+            - uuid: 02ea56af5c614814be2eede0fd6df3d9
+              expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)<50'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Eltek BC2000/systemVoltageValue.1,#1)>50'
+              name: 'System Voltage Below 50.00 Volts'
+              priority: INFO
+              manual_close: 'YES'
+      macros:
+        - macro: '{$SNMP_COMMUNITY}'
+          value: public
+          description: 'SNMPv2 read only community'
+      valuemaps:
+        - uuid: e6934c49e45f4c769e2857da1206423c
+          name: 'Eltek value mapping'
+          mappings:
+            - value: '0'
+              newvalue: OK
+            - value: '1'
+              newvalue: Alarm
+            - value: '2'
+              newvalue: Disabled
+            - value: '3'
+              newvalue: RingerAOn
+            - value: '4'
+              newvalue: RingerBOn
+            - value: '5'
+              newvalue: Unknown
+  graphs:
+    - uuid: 93c410c467864cd395aee9894c2581b9
+      name: 'Rectifier Current'
+      graph_items:
+        - color: 199C0D
+          calc_fnc: ALL
+          item:
+            host: 'Eltek BC2000'
+            key: rectifierOutputCurrent.1
+        - sortorder: '1'
+          color: F63100
+          calc_fnc: ALL
+          item:
+            host: 'Eltek BC2000'
+            key: rectifierOutputCurrent.2
+    - uuid: a643950a1297436d8c8a7db9fffcdd8a
+      name: 'System Temperature'
+      graph_items:
+        - color: 199C0D
+          calc_fnc: ALL
+          item:
+            host: 'Eltek BC2000'
+            key: systemTemperatureValue.0
+    - uuid: 6a55558f63ed488eb7555dc300a221c0
+      name: 'System V/A'
+      graph_items:
+        - color: 199C0D
+          calc_fnc: ALL
+          item:
+            host: 'Eltek BC2000'
+            key: systemCurrentValue.0
+        - sortorder: '1'
+          color: F63100
+          calc_fnc: ALL
+          item:
+            host: 'Eltek BC2000'
+            key: systemVoltageValue.1
